@@ -59,7 +59,7 @@ button {
         <img src="https://img.icons8.com/ios-glyphs/30/000000/stop.png" />
       </button>
     </div>
-    <audio id="timeout_audio" volume="0.2"></audio>
+    <audio id="timeout_audio" ></audio>
 
 
     <audio style="display:hidden" src="https://meditation-daniel.herokuapp.com/mixkit-magic-marimba-2820.wav" ></audio>
@@ -82,6 +82,10 @@ button {
         
         // variable to store count
         var remainingTime = 900;
+
+        //volume
+
+        timeoutAudio.volume = 0.2;
         
         // variable to store time interval
         var timer;
