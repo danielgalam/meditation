@@ -59,7 +59,7 @@ button {
         <img src="https://img.icons8.com/ios-glyphs/30/000000/stop.png" />
       </button>
     </div>
-    <audio id="timeout_audio"></audio>
+    <audio id="timeout_audio" volume="0.2"></audio>
 
 
     <audio style="display:hidden" src="https://meditation-daniel.herokuapp.com/mixkit-magic-marimba-2820.wav" ></audio>
