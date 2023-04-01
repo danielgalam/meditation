@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>30 second countdown timer</title>
+    <title>Countdown timer</title>
     <style>
 
 
@@ -46,7 +46,7 @@ button {
   </head>
   <body>
     <div id="countdown">
-      <div id="countdown-number">30</div>
+      <div id="countdown-number">900</div>
     </div>
     <div class="action-list">
       <button id="stop">
@@ -60,6 +60,11 @@ button {
       </button>
     </div>
     <audio id="timeout_audio"></audio>
+
+
+    <audio style="display:hidden" src="https://meditation-daniel.herokuapp.com/mixkit-magic-marimba-2820.wav" ></audio>
+    <audio style="display:hidden" src="https://meditation-daniel.herokuapp.com/mixkit-long-pop-2358.wav" ></audio>
+    <audio style="display:hidden" src="https://meditation-daniel.herokuapp.com/mixkit-magic-notification-ring-2344.wav" ></audio>
 
     <script  defer>
 
@@ -76,7 +81,7 @@ button {
         const timeoutAudio = document.getElementById("timeout_audio");
         
         // variable to store count
-        var remainingTime = 30;
+        var remainingTime = 900;
         
         // variable to store time interval
         var timer;
@@ -105,13 +110,12 @@ button {
         const resetTimer = () => {
           isStopped = true;
           clearInterval(timer);
-          remainingTime = 30;
+          remainingTime = 900;
           countContainer.innerHTML = remainingTime;
         };
         
         // Initialize timeout sound
-        document.getElementById("timeout_audio").src = "http://soundbible.com/grab.php?id=1252&type=mp3";
-        document.getElementById("timeout_audio").load();
+
         
         // Attach onclick event to buttons
         startButton.onclick = startTimer;
@@ -124,13 +128,63 @@ button {
           remainingTime -= 1;
           // render count on the screen
           countContainer.innerHTML = remainingTime;
+          
+
+          // body scan
+            if (remainingTime === 870) {
+           
+
+            document.getElementById("timeout_audio").src = "https://meditation-daniel.herokuapp.com/mixkit-magic-marimba-2820.wav";
+            document.getElementById("timeout_audio").load();
+            timeoutAudio.play();
+          }
+          
+          // do i accept myself
+          if (remainingTime === 780) {
+            document.getElementById("timeout_audio").src = "https://meditation-daniel.herokuapp.com/mixkit-long-pop-2358.wav";
+            document.getElementById("timeout_audio").load();
+            timeoutAudio.play();
+          } 
+          // Thank
+          if (remainingTime === 690) {
+            document.getElementById("timeout_audio").src = "https://meditation-daniel.herokuapp.com/mixkit-long-pop-2358.wav";
+            document.getElementById("timeout_audio").load();
+            timeoutAudio.play();
+          }    
+          // Imagine
+          if (remainingTime === 630) {
+            document.getElementById("timeout_audio").src = "https://meditation-daniel.herokuapp.com/mixkit-long-pop-2358.wav";
+            document.getElementById("timeout_audio").load();
+            timeoutAudio.play();
+          }   
+          // Breath
+          if (remainingTime === 570) {
+            document.getElementById("timeout_audio").src = "https://meditation-daniel.herokuapp.com/mixkit-magic-notification-ring-2344.wav";
+            document.getElementById("timeout_audio").load();
+            timeoutAudio.play();
+          }                               
+          // Free mind
+          if (remainingTime === 180) {
+            document.getElementById("timeout_audio").src = "https://meditation-daniel.herokuapp.com/mixkit-magic-notification-ring-2344.wav";
+            document.getElementById("timeout_audio").load();
+            timeoutAudio.play();
+          } 
+          // Free mind
+          if (remainingTime === 30) {
+            document.getElementById("timeout_audio").src = "https://meditation-daniel.herokuapp.com/mixkit-magic-notification-ring-2344.wav";
+            document.getElementById("timeout_audio").load();
+            timeoutAudio.play();
+          }                       
+          
           // timeout on zero
           if (remainingTime === 0) {
             isStopped = true;
             clearInterval(timer);
             // Play audio on timeout
+            document.getElementById("timeout_audio").src = "http://soundbible.com/grab.php?id=1252&type=mp3";
+            document.getElementById("timeout_audio").load();
             timeoutAudio.play();
-            remainingTime = 30;
+            remainingTime = 900;
           }
         };
             </script>
