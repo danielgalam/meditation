@@ -85,7 +85,7 @@ button {
 
         //volume
 
-        timeoutAudio.volume = 0.2;
+        timeoutAudio.volume = 0.1;
         
         // variable to store time interval
         var timer;
